@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Karolina Feluś 3ib1 Zadania</title>
+<style>
+#stopa{
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	font-style:italic;
+	font-weight:bold;
+}
+
+h3{
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<ul>
+<li><b>Składnia JavaScript, instrukcje sterujące <font color='blue'>(1p)</font></b>
+<span style='color:#aaaaaa;'>
+- parzystość
+- silnia
+- pierwszość
+- n-pierwszych liczb pierwszych <a href="11.html" target="_blank">1</a>
+</span>
+<li><b> String, wrappery <font color='blue'>(1p)</font></b>
+<span style='color:#aaaaaa;'>
+<a href="21.html" target="_blank">1</a>, <a href="22.html" target="_blank">2</a>, <a href="23.html" target="_blank">3</a>, <a href="24.html" target="_blank">4</a>
+</span>
+<li><b> funkcje - zasięg zmiennych, dochodzenie do elementów strony HTML <font color='blue'>(1p)</font></b>
+<span style='color:#aaaaaa;'>
+<a href="31.html" target="_blank">1</a>, <a href="32.html" target="_blank">2</a>, <a href="33.html" target="_blank">3</a>, <a href="34.html" target="_blank">4</a>
+- bonus: obracający się obrazek wokół środkowej osi y
+</span>
+<li><b>Rekurencja. Data i czas. <font color='blue'>(1p)</font></b>
+<span style='color:#aaaaaa;'>
+<a href="41.html" target="_blank">1</a>, <a href="42.html" target="_blank">2</a>
+<font color='green'>(+0.5p pb)</font> bonus: zegar wskazówkowy
+</span>
+<li><b>Zdarzenia. <font color='blue'>(1p)</font></b>
+<span style='color:#aaaaaa;'>
+- a +/- b 	alert z wynikiem
+- kalkulator systemowy lub "mój" - <a href="52.html" target="_blank">1</a> (zabezpiecz "wieloznak")
+- minutnik
+</span>
+<li><b>Ciasteczka <font color='blue'>(1p)</font></b>
+<span style='color:#aaaaaa;'>
+<a href="51.html" target="_blank">1</a>
+pierwsze wejście - pyta o imię
+kolejne wejścia - wita i podaje czas ostatniej wizyty
+</span>
+<li><b style="color:blue;">JS - praca ze stylami ("zestrzel zajączka")  (5 pkt)</b>
+<span style='color:#aaaaaa;'>
+<a href="53.html" target="_blank">1</a>
+
+(1p) pozycja zajączka losowana z zakresu "obszaru roboczego" - zajączek nie wylosuje się poza obszarem (nawet po zmianie wielkości okna)
+(1p) co x zestrzeleń następuje wzrost szybkości losowania zajączka
+(1p) losowanie następuje w intervale przykładowo
+	jeśli zajączek losuje się co 10 minut a zestrzelę go w pierwszej minucie to kolejny wylosuje się za 9 minut
+	a nie natychmiast po zestrzeleniu
+(1p) wzrost punktów
+(1p) "graficzny celownik" (nad grafiką zajączka) (nie stylem cursor:url)
+
+<font color='green'>(+0.5p pb)</font> bonus: wylatujące kaczki z lewej do prawej "po paraboli" - rozwinąć skrzydła: punkty życia, wzrost trudności (kilka kaczek zróznymi prędkościami) itp.
+</span>
+<li><b>"Dynamiczny" DOM, zdarzenia klawiatury. <font color='blue'>(1p)</font></b>
+<span style='color:#aaaaaa;'>
+(WSAD) - <a href="71.html" target="_blank">1</a>, <a href="72.html" target="_blank">2</a>, <a href="73.html" target="_blank">3</a>, (1-9 i tab) - <a href="74.html" target="_blank">4</a>
+</span>
+<li><b>Sprawdzian wiadomości.</b>
+poprawiasz to co pisałeś/aś!
+Robisz wersję dopieszczoną graficznie i w działaniu
+dostajesz X punktów z poprawy (jeśli nie potrafisz na maxa - nie oszukuj/zlecaj zrób sam tyle co potrafisz (pytaj kolegów, staka, google)
+ostateczne punkty po poprawie: ( X +otrzymane_pkt_na_sprawdzianie)/2
+
+zadaję pytania kontrolne - weryfikacja samodzielności!
+ostateczny termin - koniec klasyfikacji semestralnej (18.12.2014 godzina 14:00)
+nie wystarczy samo wysłanie na maila, musisz skontaktować się ze mną osobiście (pytania kontrolne)
+po klasyfikacji ewentualny temat poprawy zamknięty.
+nie pisałeś/aś sprawdzianu - zgłoś się, ustalimy konkrety.
+<span style='color:#aaaaaa;'>
+</span>
+<li><b style="color:blue;">klawiatura - projekt "Snake" (6 pkt)</b>
+(1.5p) wygenerowanie planszy wraz z grafikami + niezbędnych tablic (wraz z odpowiednią ich zawartością) (w moim alg. pkt: 1-3a, 6, 11)
+(0.5p) losowanie elementu do zjedzenia + wzrost długości (w moim alg. pkt: 7,8)
+(1.5p) obsługa klawiszy (zmiana kierunku ruchu węża) (w moim alg. pkt: 4,5)
+(1p) samoczynny ruch węża (w moim alg. pkt: 10)
+(1.5p) kolizje ze ścianami i samym sobą (w moim alg. mnie pkt: 9)
+
+<font color='green'>(+0.5p pb)</font> zachęcam do wersji z płynnym ruchem (co x px) a nie "skokowej" (nie wymagany element gry)
+<font color='green'>(+0.5p pb)</font> zachęcam do dodania grafik zakrętów i głowy
+<span style='color:#aaaaaa;'>
+	--------- StepByStep -----------
+	Założenia:
+	1) wszystkie liczby w tablicy większe od zera zarezerwowane na kolejne częsci węża
+	2) liczba -2 to ściany
+	3) liczba -1 element do zebrania (przyrost węża)
+
+	Proponowany algorytm:
+	1) Utwórz tablicę NxN
+	2) Utwórz "plyfield" w postaci tabeli NxN(lub divów/spanów/itp) - siatka
+	3) w środkowym elemecie tablicy wsaw 1, ustaw zmienną x i y aktualna pozycja początku węża na odpowiednie indeksy środka tablicy. Przykładowo
+	3a) dodaj funkcję wpisującą do komórek tabeli odpowiednie elementy tablicy (najłatwiej poprzez odpowiednie id komórek np: k_x_y)
+	4) dodać obsługę klawiatury. Przykładowo wciśnięcie klawisza D spowoduje:
+		a) zwiększenie wszyskich elementów w tablicy większych od 0 o 1
+		b) wpisanie w elemencie tablica[x+1][y] (lub [x][y+1]?) wartość 1
+		c) wywołanie funkcji z pkt 3a
+
+	po tym punkcie powinien co wciśnięcie klawisza wąż rosnąć (kolejno numerowane części 1,2,3....)
+
+	5) Wyzeruj w tablicy wszystkie wartości większe od długości węża
+	6) wpisz na obrzeżach tablicy wartości -2
+	7) wylosuj element do zebrania (-1) tak by nie wypadł na ścianach i na elemencie węża
+			uwaga: zachęcam losować z elementów możliwych gdzie się może pojawić -1 a nie do skutku (jak wylosuję na ścianie to ponawiam losowanie)
+	8) przyrost długości po zebraniu -1
+	9) dodaj kolizję ze ścianą i wężem
+	10) dodaj interval by wąż sam "leciał"
+	11) dodaj grafikę
+</span>
+
+<li><b style="color:blue;">Projekt - "Saper" (6 pkt)</b>
+(1p) wpisujemy width, height, ilość bomb, klikamy przycisk "ok" i generuje się plansza saper'a w działaniu jak w systemie XP (tablica + rozlosowane w niej bomby)
+(1.5p) pokazywanie ilości sąsiadujących bomb
+(1p) trafenie w bombę - koniec gry i pokazanie rozmieszczenia pozostałych (zagraj w sapera!)
+(1p) RMB - rotacyjna zmiana grafiki (oznaczenie bomby / znak ? / brak)
+(1p) rekordy "top 10" wybranego trybu (w cookie lub storage) + ich prezentacja.
+(0.5p) czas, liczenie bomb (włącznie z "szacunkowym" znakiem ?), zakończenie gry
+
+<font color='green'>(+0.5p pb)</font> zachęcam do rekordów typu "top 10" dla wszystkich dotychczas rozegranych trybów (nie jest to wymagany element gry).
+<font color='green'>(+0.5p pb)</font> zachęcam do rekurencyjnego autoodkrywania sąsiednich pustych pól (zer, nie jest to wymagany element gry)
+<span style='color:#aaaaaa;'>
+</span>
+
+
+
+</ul>
+</body>
+</html>
