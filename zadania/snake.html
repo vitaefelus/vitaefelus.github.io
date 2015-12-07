@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            table{
+                border-collapse: collapse;
+            }
+
+            td{
+                width:20px;
+                height:20px;
+                border:1px solid rgba(0,0,0,0);
+            }
+        </style>
+        <script>
+            var n=10;
+            var tab=[];
+            var x=parseInt(n/2);
+            var y=x;
+            var slength = 2;
+            var xrand;
+            var yrand;
+            var move;
+
+
+            window.onkeydown=function (e){
+                //console.log(e.which + tab[x][y]);//w
+
+                clearInterval(move);
+
+                move = setInterval(function(){ruch()},150);
+
+                function ruch(){
+                    if(e.which==87){
+                        x--;}
+                    else if(e.which==65){
+                        y--;}
+                    else if(e.which==68){
+                        y++;}
+                    else if(e.which==83){
+                        x++;}
+
+
+                inc();
+                checkwin();
+                tab[x][y]=1;
+                zeruj();
+                amam();
+                render();
+
+                }
+            }
+
+            function zeruj(){
+                for(var i=0;i<n;i++)
+                    for(var j=0;j<n;j++){
+                        if(tab[i][j]>=slength)
+                            tab[i][j]=0;
+                    }
+
+            }
+
+
+            window.addEventListener("load",function(){
+
+                var t=document.createElement("table");
+                for(i=0;i<n;i++){
+                    tab[i]=[]
+                    var tr=document.createElement("tr");
+                    for(j=0;j<n;j++){
+                            if(i==0 || i==9 || j==0 || j==9){
+                                tab[i][j]=-2
+                            }else{
+                                tab[i][j]=0;
+                            }
+                        var td=document.createElement("td");
+                        td.id="k_"+i+"_"+j;
+                        tr.appendChild(td);
+                    }
+
+                    t.appendChild(tr);
+                }
+
+
+                document.body.appendChild(t);
+                tab[x][y]=1;
+                japko();
+                amam();
+                render();
+
+            },false)
+
+            function render(){
+                for(var i=0;i<n;i++){
+                    for(var j=0;j<n;j++){
+                        if(tab[i][j]==-2){
+                            document.getElementById("k_"+i+"_"+j).style.backgroundColor="#348e3f"
+                        }else if(tab[i][j]==0){
+                            document.getElementById("k_"+i+"_"+j).style.backgroundColor="#8e5434"
+                        }else if(tab[i][j]==-1){
+                            document.getElementById("k_"+i+"_"+j).style.backgroundColor="#ba1a1a"
+                        }else{
+                            document.getElementById("k_"+i+"_"+j).style.backgroundColor="#f4e78d"
+                        }
+                    }
+                }
+
+               for(var i=0;i<n;i++){
+                    for(var j=0;j<n;j++){
+                        document.getElementById("k_"+i+"_"+j).innerHTML=""
+
+                    }
+                }
+            }
+
+
+            function inc(){
+                for(var i=0;i<n;i++){
+                    for(var j=0;j<n;j++){
+                        if(tab[i][j]>0)
+                            tab[i][j]++;
+                    }
+                }
+            }
+
+            function checkwin(){
+                console.log(tab[x][y])
+                if(tab[x][y]==-2 || tab[x][y]>1){
+                    alert("you lose");
+                }
+            }
+
+
+            function japko(){
+                xrand=Math.ceil(Math.random()*8+1)
+                yrand=Math.ceil(Math.random()*8+1)
+                console.log("japkuje" + xrand + yrand + x + y)
+                if(tab[xrand][yrand]==0 && tab[x][y]!=-2){
+                    tab[xrand][yrand]=-1
+                }else{
+                    japko();
+                }
+            }
+
+            function amam(){
+                console.log("żre" + xrand + yrand + x + y)
+                if(x==xrand && y==yrand){
+                    slength++;
+                      japko();
+                    }
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

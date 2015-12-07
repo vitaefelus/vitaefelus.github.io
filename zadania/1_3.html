@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+      <script>
+      var input = prompt("Podaj liczbę.");
+      var a = true;
+      for(i=2;i<input;i++){
+        if(input % i==0){
+          alert("Liczba nie jest pierwsza");
+          a = false;
+          break;
+        }
+        }
+      if(a){
+        alert("Liczba jest pierwsza")
+      }
+      </script>
+      <!-- 17 - liczba nie jest pierwsza -->
+  </head>
+</html>

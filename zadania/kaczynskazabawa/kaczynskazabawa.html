@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script>
+
+		//zrezygnowalam z pomyslu z losowaniem, zostalam przy Jarku, tamten był ponad moje siły + PiS to tak naprawdę tylko Jarek, więc nie widzę powodu
+				var timeout=2000;
+				var points=0;
+				var lastLap=0;
+				var jaroslaw=false;
+
+				function kill() {
+					if(jaroslaw!=false) {
+						document.body.removeChild(document.getElementById('jaroslaw'));
+					}
+					jaroslaw=false;
+					points++;
+					document.getElementById('points').innerHTML=points;
+				}
+
+				function game() {
+					var width = Math.floor(Math.abs((Math.random() * window.innerWidth)-100));
+					var height = Math.floor(Math.abs((Math.random() * window.innerHeight)-100));
+					if(jaroslaw!=false){
+						document.body.removeChild(document.getElementById('jaroslaw'))
+					};
+					document.body.innerHTML+="<img style='position:absolute;left:"+width+";top:"+height+";' width='100px' id='jaroslaw' onclick=\"kill()\"src='jaroslaw.png'/>";
+					jaroslaw=true;
+					document.getElementById('points').innerHTML=points;
+					if(points%10 == 0 && points!=lastLap) {
+						timeout/=2;
+						lastLap=points;
+						document.getElementById('timeout').innerHTML=timeout;
+					}
+				}
+
+				function start(){
+					document.body.innerHTML='<div style="position:fixed;top:10;right:10;text-align:right;">Wynik: <span id="points">1</span><span id="timeout" style="display:none;">2000</span></div><div style="position:fixed;width:100%;height:100px;background-image:url(trawka.png);bottom:0px;left:0px;"></div>';
+					(function repeat() {
+				    	game();
+				    	timer = setTimeout(repeat, timeout);
+					})();
+				}
+
+		</script>
+		<style>
+			#id{
+				position:absolute;
+				top:100px;
+				left:100px;
+			}
+
+			html,body{
+				height:100%;
+				width:100%;
+				margin:0px;
+				padding:0px;
+			}
+
+			html *{
+				cursor: pointer;
+				color:white;
+			}
+
+			body{
+				background-image:url('sejm.jpg');
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div style="text-align:center;font-size:65px;padding-top:10%;">Kaczyńska zabawa!<br /><br /><div style="font-size:50px;background-color:rgba(0,0,0,0.5)" onclick="start()">START</div><span style="font-size:25px"><br/><br/><br/></span></div>
+		<div style="position:fixed;width:100%;height:100px;bottom:0px;left:0px;"></div>
+	</body>
+</html>

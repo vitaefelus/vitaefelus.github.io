@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<script>
+
+	</script>
+	</head>
+
+	<body>
+	<form name="formik">
+		<input id="tekst" name="inpucik" value="Wyindywidualizowali się z rozentuzjazmowanego tłumu wyimaginowanych prestydigitatorow">
+	</form>
+
+	<script>
+
+		var inpucik=false,v=0;
+		var inputv=document.getElementById("tekst").value;
+		setInterval(function(){
+			inputv=document.getElementById("tekst").value;
+			document.getElementById("tekst").value = inputv.substring(1) + inputv.substring(0,1);
+		},200)
+
+	</script>
+	</body>
+</html>

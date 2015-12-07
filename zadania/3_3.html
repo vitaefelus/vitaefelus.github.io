@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+
+    <script>
+    window.addEventListener('load',function(){
+      var img = document.getElementById('img');
+
+      var i = 100;
+
+        setInterval(function(){
+          if(i>300)
+            {
+              r=false;
+            }else if (i<=100){
+              r=true;
+            }
+          if(r){
+            i+=10
+          }else{
+            i-=10;
+          }
+          img.width=i;
+        },100)
+    },false)
+    </script>
+
+  </head>
+
+  <body>
+    <img id="img" src="img/img1.png">
+  </body>
+</html>

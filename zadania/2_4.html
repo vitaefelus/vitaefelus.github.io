@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>fala</title>
+<script src="script.js"></script>
+<script>
+
+		var v="";
+		var font=7;
+		var boolinek=false;
+		a=prompt("Wpisz string");
+		for(var i=0;i<a.length;i++) {
+			v+=a[i].fontsize(font);
+			if(boolinek){
+				font++;
+			}else{
+				font--;
+			}
+			if(i%5==4) boolinek=!boolinek;
+		}
+		document.write(v+"<br/>");
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

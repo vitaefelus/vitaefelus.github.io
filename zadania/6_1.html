@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+		<script>
+		window.addEventListener('load',function(){
+			var name,komunikat;
+			var d=new Date();
+			var bc=d.toLocaleTimeString();
+			d.setTime(d.getTime()+1000*60*60*2);
+
+
+			if(document.cookie.indexOf("dane")==-1) {
+				name=prompt("Jak Ci na imię?");
+				komunikat="Witaj "+name;
+				document.cookie="dane="+name+"|"+bc+";expires"+d.toUTCString();
+			}else{
+				var pom=document.cookie.split("=")[1].split("|");
+				var komunikat="Witaj "+pom[0]+" Ostatnio odwiedziłeś nas "+pom[1];
+				document.cookie="dane="+pom[0]+"|"+bc+";expires"+d.toUTCString();
+
+			}
+			document.getElementById("text").innerHTML=komunikat;
+		},false)
+
+
+		</script>
+	</head>
+	<body>
+		<div id="text" style="text-align:center;"></div>
+	</body>
+</html>
