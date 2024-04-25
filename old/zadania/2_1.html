@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+
+    <script>
+    window.addEventListener('load',function(){
+      var n = prompt("Podaj ilosc liczb do wyswietlenia: ")
+
+      function fonterMaleDuze(n){
+        for(var i=0;i<n;i++){
+          var paragraphMaker = document.createElement("font");
+          paragraphMaker.innerHTML = "1";
+          document.body.appendChild(paragraphMaker);
+          paragraphMaker.size = (i%2)+2;
+
+          console.log(i%2);
+        }}
+
+            fonterMaleDuze(n)
+    } ,false)
+    </script>
+
+  </head>
+
+  <body>
+
+  </body>
+</html>

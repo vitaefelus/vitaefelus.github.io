@@ -1,23 +1,38 @@
-<html>
-
-  <head>
+﻿<!doctype html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>TheDaughters-FirstEncounter.zip</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 
+    <link rel="stylesheet" href="style.css">
 
-    <title>Logo</title>
-  </head>
+</head>
 
-  <body style="background-color:#000;">
-    <div style="text-align:center;padding:150px 0;">
+<body>
 
-      <object>
-        <embed src="logo-white-bezobrysu.svg">
-      </object>
+    <div class="outerContainer">
+        <h3 class="written-in-ink"><a href="https://www.inklestudios.com/ink">WRITTEN IN INK</a></h3>
 
+        <div id="controls" class="buttons">
+          <a id="rewind" title="Restart story from beginning">restart</a>
+          <a id="save" title="Save progress">save</a>
+          <a id="reload" title="Reload from save point">load</a>
+          <!-- <a id="theme-switch" title="Switch theme">theme</a> -->
+        </div>
+
+        <div id="story" class="container">
+            <div class="header">
+                <!-- <h1>TheDaughters-FirstEncounter.zip</h1> -->
+                <h2 class="byline"></h2>
+            </div>
+        </div>
     </div>
-  </body>
 
+    <script src="ink.js"></script>
+    <script src="TheDaughters-FirstEncounter.js"></script>
+    <script src="main.js"></script>
+</body>
 </html>
